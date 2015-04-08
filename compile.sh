@@ -1,0 +1,1 @@
+gcc -o test *.c -L libft/ -lft -I libft/includes/ -W -Wextra -Werror -fno-builtin -Wno-format -Wno-format-extra-args
