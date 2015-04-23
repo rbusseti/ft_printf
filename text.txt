@@ -1,0 +1,10 @@
+ft_printf("Bla bla %010p", (void*)14785478);
+ft_printf("Bla bla %010p", 0);
+
+Le mien:
+Bla bla   0xe19bc6
+Bla bla      (nil)
+Le vrai:
+
+Bla bla 0x00e19bc6
+Bla bla      (nil)

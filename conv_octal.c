@@ -3,7 +3,6 @@
 static char	*ft_get_str_size(unsigned int d, int *len)
 {
     int		i;
-    int		base;
     char	*octal_nb;
 
     i = 0;

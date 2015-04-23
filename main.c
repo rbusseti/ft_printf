@@ -5,9 +5,9 @@
 int	main(void)
 {
     ft_putendl("Le mien:");
-    ft_printf("La premiere lettre est le %o", 666);
+    ft_printf("Bla bla %-+03d", 0);
     ft_putchar('\n');
     ft_putendl("Le vrai:");
-    printf("La premiere lettre est le %o", 666);
+    printf("Bla bla %-+03d", 0);
     return (0);
 }
