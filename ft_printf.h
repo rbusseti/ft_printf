@@ -31,7 +31,6 @@ typedef struct	s_opt
     char	minus;
     char	isprec;
     char	fld_m;
-    char	m_minus;
     char	zero_f;
     char	fzero;
     int		prec;
@@ -67,7 +66,7 @@ char	*ft_conv_unsigchar(va_list ap);
 char	*ft_conv_unsigdec(va_list ap);
 char	*ft_conv_octal(va_list ap);
 char	*ft_conv_hexa(va_list ap);
-char	*ft_conv_ptr(va_list ap, t_opt *options);
+char	*ft_conv_ptr(va_list ap);
 int	ft_conv_no(char *cmd, va_list ap);
 int	ft_aff_space(int ret, char *cmd, int *ind);
 int	ft_aff_plus(int ret, char *cmd, int *ind);

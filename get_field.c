@@ -38,21 +38,6 @@ void		ft_get_field(char *cmd, int *ind, t_opt *options, va_list ap)
         i++;
     }
     else if (ft_isdigit(cmd[i]))
-    {
-        if (cmd[i] != '0')
             options->fld_size = ft_get_field_size(cmd, &i);
-	else if ((options->conv & C_UCHAR || options->conv & C_STR ||
-		  options->conv & C_PTR) && ft_isdigit(cmd[i + 1]))
-	{
-	    options->fld_size = ft_get_field_size(cmd, &i);
-	    options->zero_f = 1;
-	}
-        else
-	{
-            i++;
-	    options->m_minus = 1;
-	}
-    }
     *ind = i;
-    ft_putnbr(options->fld_size);
 }

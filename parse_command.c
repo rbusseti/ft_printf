@@ -63,12 +63,11 @@ static int	ft_get_attr(char *cmd, int i, t_opt *options)
 	options->hash = 1;
 	return (1);
     }
-/*
     else if (cmd[i] == '0')
     {
 	options->fzero = 1;
 	return (1);
-	}*/
+    }
     else
 	return (0);
 }

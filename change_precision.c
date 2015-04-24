@@ -74,7 +74,7 @@ char	*ft_change_precision(char *to_print, t_opt *options)
 	return (ft_change_precptr(to_print, options->prec, size));
     else if ((options->prec != 0) && (size >= options->prec))
 	return (to_print);
-    else if (to_print[0] == '-' && options->m_minus == 1)
+    else if (to_print[0] == '-' && options->fzero == 1)
 	return (ft_change_negnumber(to_print, options->prec - 1, size));
     else if (to_print[0] == '-')
 	return (ft_change_negnumber(to_print, options->prec, size));

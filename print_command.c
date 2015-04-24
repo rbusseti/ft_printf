@@ -13,7 +13,7 @@ static char  *ft_print_conv(va_list ap, t_opt *options)
     else if(options->conv & C_HEXA)
 	to_print = ft_conv_hexa(ap);
     else if(options->conv & C_PTR)
-	to_print = ft_conv_ptr(ap, options);
+	to_print = ft_conv_ptr(ap);
     else if(options->conv & C_UCHAR)
     {
 	to_print = ft_conv_unsigchar(ap);
@@ -80,6 +80,30 @@ static int  ft_make_print(char *to_print, t_opt *options)
     return (ft_strlen(to_print));
 }
 
+static void     ft_update_fzero(t_opt *options, char *to_print)
+{
+    if (options->minus == 1)
+        options->fzero = 0;
+    else if (options->fld_size != 0 && (options->conv & C_SDEC || \
+	     options->conv & C_UDEC || options->conv & C_OCTA || \
+	     options->conv & C_HEXA || \
+	     (options->conv & C_PTR && ft_strcmp(to_print, "(nil)") != 0)))
+    {
+        if (options->isprec == 1)
+            options->fzero = 0;
+        else if (options->fld_size != 0)
+        {
+            options->isprec = 1;
+	    if (options->conv & C_PTR)
+		options->prec = options->fld_size - 2;
+	    else
+		options->prec = options->fld_size;
+            options->fld_size = 0;
+        }
+    }
+}
+
+
 int	    ft_print_command(va_list ap, t_opt *options)
 {
     char	*to_print;
@@ -92,6 +116,8 @@ int	    ft_print_command(va_list ap, t_opt *options)
     if (options->error == 1)
 	return (-1);
     to_print = ft_print_conv(ap, options);
+    if (options->fzero)
+	ft_update_fzero(options, to_print);
     if (options->hash == 1)
 	to_print = ft_change_hash(to_print, options);
     if (options->plus == 1)

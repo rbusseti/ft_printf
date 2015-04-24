@@ -17,7 +17,6 @@ t_opt	*ft_init_struct(void)
     options->prec = 0;
     options->fld_size = 0;
     options->fld_m = 0;
-    options->m_minus = 0;
     options->zero_f = 0;
     options->fzero = 0;
     return (options);

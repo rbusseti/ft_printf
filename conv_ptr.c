@@ -45,7 +45,7 @@ static char     *ft_base_hexa(unsigned long d)
     return (hexa_nb);
 }
 
-char	*ft_conv_ptr(va_list ap, t_opt *options)
+char	*ft_conv_ptr(va_list ap)
 {
     unsigned long	adr;
     char		*hexa_nb;
@@ -55,6 +55,9 @@ char	*ft_conv_ptr(va_list ap, t_opt *options)
     if (adr == 0)
 	return ("(nil)");
     else
+	return (hexa_nb);
+}
+/*
     {
 	if (options->fld_size != 0 && options->isprec == 0 && \
 	    options->zero_f == 1)
@@ -62,7 +65,4 @@ char	*ft_conv_ptr(va_list ap, t_opt *options)
 	    options->isprec = 1;
 	    options->prec = options->fld_size - 2;
 	    options->fld_size = 0;
-	}
-	return (hexa_nb);
-    }
-}
+	    }*/
